@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Policies\RoleServicePolicy;
+use App\Services\RoleService;
+use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -14,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
+        RoleService::class => RoleServicePolicy::class
     ];
 
     /**
@@ -26,5 +30,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+        Passport::routes(function ($router) {
+            $router->forAccessTokens();
+            $router->forTransientTokens();
+        });
+
+        Passport::tokensExpireIn(now()->addMinute(10));
+
+        Passport::refreshTokensExpireIn(now()->addDays(10));
     }
 }
