@@ -2,12 +2,12 @@
 
 namespace App\Policies;
 
-use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 
 class UserServicePolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization, Authorizable;
 
     /**
      * Create a new policy instance.
@@ -19,20 +19,18 @@ class UserServicePolicy
         //
     }
     public function create($user) {
-        return true;
-        //if user can create visa return true
-        //else return false
+        return $user->can('user-add');
     }
     public function update($user) {
-        return true;
+        return $user->can('user-edit');
     }
     public function delete($user) {
-        return true;
+        return $user->can('user-delete');
     }
     public function index($user) {
-        return true;
+        return $user->can('user-index');
     }
     public function view($user) {
-        return true;
+        return $user->can('user-view');
     }
 }

@@ -19,20 +19,18 @@ class PermissionServicePolicy
         //
     }
     public function create($user) {
-        return true;
-        //if user can create visa return true
-        //else return false
+        return $user->can('permission-add');
     }
     public function update($user) {
-        return true;
+        return $user->can('permission-edit');
     }
     public function delete($user) {
-        return true;
+        return $user->can('permission-delete');
     }
     public function index($user) {
-        return true;
+        return $user->can('permission-index');
     }
     public function view($user) {
-        return true;
+        return $user->can('permission-view');
     }
 }

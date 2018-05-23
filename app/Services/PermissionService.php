@@ -42,6 +42,6 @@ class PermissionService
     public function index() {
         $this->authorize('index', PermissionService::class);
 
-        return Permission::all();
+        return Permission::orderBy('name')->get();
     }
 }

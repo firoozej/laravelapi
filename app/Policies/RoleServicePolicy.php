@@ -4,10 +4,11 @@ namespace App\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 
 class RoleServicePolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization, Authorizable;
 
     /**
      * Create a new policy instance.
@@ -19,20 +20,18 @@ class RoleServicePolicy
         //
     }
     public function create($user) {
-        return true;
-        //if user can create visa return true
-        //else return false
+        return $user->can('role-add');
     }
     public function update($user) {
-        return true;
+        return $user->can('role-edit');
     }
     public function delete($user) {
-        return true;
+        return $user->can('role-delete');
     }
     public function index($user) {
-        return true;
+        return $user->can('role-index');
     }
     public function view($user) {
-        return true;
+        return $user->can('role-view');
     }
 }
