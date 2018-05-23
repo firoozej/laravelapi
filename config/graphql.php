@@ -134,6 +134,7 @@ return [
             'query' => [
                 'roles' => 'App\GraphQL\Query\RolesQuery',
                 'permissions' => 'App\GraphQL\Query\PermissionsQuery',
+                'users' => 'App\GraphQL\Query\UsersQuery',
                 'logout' => 'App\GraphQL\Query\LogoutQuery',
                 'user' => 'App\GraphQL\Query\UserQuery'
             ],
@@ -144,6 +145,9 @@ return [
                 'addPermission' => 'App\GraphQL\Mutation\Permission\Add',
                 'editPermission' => 'App\GraphQL\Mutation\Permission\Edit',
                 'deletePermission' => 'App\GraphQL\Mutation\Permission\Delete',
+                'addUser' => 'App\GraphQL\Mutation\User\Add',
+                'editUser' => 'App\GraphQL\Mutation\User\Edit',
+                'deleteUser' => 'App\GraphQL\Mutation\User\Delete',
             ]
         ]
     ],
