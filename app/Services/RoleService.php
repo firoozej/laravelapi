@@ -30,7 +30,7 @@ class RoleService
         return $role;
     }
     public function index() {
-        $this->authorize('index', RoleService::class);
+        $this->authorize('view', RoleService::class);
         return Role::all();
     }
 }

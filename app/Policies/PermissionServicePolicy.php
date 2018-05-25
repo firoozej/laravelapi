@@ -27,9 +27,6 @@ class PermissionServicePolicy
     public function delete($user) {
         return $user->can('permission-delete');
     }
-    public function index($user) {
-        return $user->can('permission-index');
-    }
     public function view($user) {
         return $user->can('permission-view');
     }

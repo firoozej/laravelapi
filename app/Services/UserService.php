@@ -63,7 +63,7 @@ class UserService
 
     public function index()
     {
-        $this->authorize('index', UserService::class);
+        $this->authorize('view', UserService::class);
 
         return User::all();
     }

@@ -40,7 +40,7 @@ class PermissionService
         return $permission;
     }
     public function index() {
-        $this->authorize('index', PermissionService::class);
+        $this->authorize('view', PermissionService::class);
 
         return Permission::orderBy('name')->get();
     }

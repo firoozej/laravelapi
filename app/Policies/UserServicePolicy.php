@@ -27,9 +27,6 @@ class UserServicePolicy
     public function delete($user) {
         return $user->can('user-delete');
     }
-    public function index($user) {
-        return $user->can('user-index');
-    }
     public function view($user) {
         return $user->can('user-view');
     }

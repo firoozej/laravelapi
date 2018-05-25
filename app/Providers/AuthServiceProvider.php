@@ -8,6 +8,7 @@ use App\Policies\UserServicePolicy;
 use App\Services\RoleService;
 use App\Services\PermissionService;
 use App\Services\UserService;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -34,7 +35,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::before(function ($user, $ability) {
+            if ($user->hasRole('admin')) {
+                return true;
+            }
+        });
+
         Passport::routes(function ($router) {
             $router->forAccessTokens();
             $router->forTransientTokens();

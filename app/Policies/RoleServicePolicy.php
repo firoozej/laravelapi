@@ -28,9 +28,6 @@ class RoleServicePolicy
     public function delete($user) {
         return $user->can('role-delete');
     }
-    public function index($user) {
-        return $user->can('role-index');
-    }
     public function view($user) {
         return $user->can('role-view');
     }
