@@ -20,15 +20,15 @@ class RoleServicePolicy
         //
     }
     public function create($user) {
-        return $user->can('role-add');
+        return $user->can('role');
     }
     public function update($user) {
-        return $user->can('role-edit');
+        return $user->can('role');
     }
     public function delete($user) {
-        return $user->can('role-delete');
+        return $user->can('role');
     }
     public function view($user) {
-        return $user->can('role-view');
+        return $user->can('role');
     }
 }

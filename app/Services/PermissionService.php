@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 
 class PermissionService
@@ -43,5 +44,21 @@ class PermissionService
         $this->authorize('view', PermissionService::class);
 
         return Permission::orderBy('name')->get();
+    }
+
+    public function userPermissions() {
+        $user = auth()->user();
+        if($user->superAdmin()) {
+            return Permission::all();
+        }
+
+        $userRoles = $user->roles()->pluck('id')->toArray();
+        $permissions  = DB::table('permissions as p')
+            ->join('role_has_permissions as rp', 'p.id', '=', 'rp.permission_id')
+            ->select('p.*')
+            ->whereIn('rp.role_id', $userRoles)
+            ->get();
+        return $permissions;
+
     }
 }

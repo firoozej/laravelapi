@@ -19,15 +19,15 @@ class UserServicePolicy
         //
     }
     public function create($user) {
-        return $user->can('user-add');
+        return $user->can('user');
     }
     public function update($user) {
-        return $user->can('user-edit');
+        return $user->can('user');
     }
     public function delete($user) {
-        return $user->can('user-delete');
+        return $user->can('user');
     }
     public function view($user) {
-        return $user->can('user-view');
+        return $user->can('user');
     }
 }

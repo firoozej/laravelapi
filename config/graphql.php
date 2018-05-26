@@ -136,7 +136,8 @@ return [
                 'permissions' => 'App\GraphQL\Query\PermissionsQuery',
                 'users' => 'App\GraphQL\Query\UsersQuery',
                 'logout' => 'App\GraphQL\Query\LogoutQuery',
-                'user' => 'App\GraphQL\Query\UserQuery'
+                'user' => 'App\GraphQL\Query\UserQuery',
+                'nav' => 'App\GraphQL\Query\NavQuery'
             ],
             'mutation' => [
                 'addRole' => 'App\GraphQL\Mutation\AddRoleMutation',

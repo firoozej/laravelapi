@@ -9,25 +9,16 @@ class PermissionServicePolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
     public function create($user) {
-        return $user->can('permission-add');
+        return $user->can('permission');
     }
     public function update($user) {
-        return $user->can('permission-edit');
+        return $user->can('permission');
     }
     public function delete($user) {
-        return $user->can('permission-delete');
+        return $user->can('permission');
     }
     public function view($user) {
-        return $user->can('permission-view');
+        return $user->can('permission');
     }
 }
