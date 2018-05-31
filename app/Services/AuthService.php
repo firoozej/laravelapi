@@ -83,7 +83,7 @@ class AuthService {
     {
         $data = array_merge($data, [
             'client_id'     => '2',
-            'client_secret' => 'Eb4Z1TrPSNl3Js9aYuvJ0G76uSl76aRMLLE2nzWO',
+            'client_secret' => 'dIqjDvn6QiPpApH2PIEZiWJ5S3UlDiwV5PojuhFz',
             'grant_type'    => $grantType
         ]);
         $data = ['form_params' => $data];

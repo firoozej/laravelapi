@@ -137,7 +137,9 @@ return [
                 'users' => 'App\GraphQL\Query\UsersQuery',
                 'logout' => 'App\GraphQL\Query\LogoutQuery',
                 'user' => 'App\GraphQL\Query\UserQuery',
-                'nav' => 'App\GraphQL\Query\NavQuery'
+                'nav' => 'App\GraphQL\Query\NavQuery',
+                'categories' => 'App\GraphQL\Query\Content\Categories',
+                'categoriesForSelect' => 'App\GraphQL\Query\Content\CategoriesForSelect',
             ],
             'mutation' => [
                 'addRole' => 'App\GraphQL\Mutation\AddRoleMutation',
@@ -149,6 +151,9 @@ return [
                 'addUser' => 'App\GraphQL\Mutation\User\Add',
                 'editUser' => 'App\GraphQL\Mutation\User\Edit',
                 'deleteUser' => 'App\GraphQL\Mutation\User\Delete',
+                'addCategory' => 'App\GraphQL\Mutation\Content\Category\Add',
+                'editCategory' => 'App\GraphQL\Mutation\Content\Category\Edit',
+                'deleteCategory' => 'App\GraphQL\Mutation\Content\Category\Delete',
             ]
         ]
     ],
@@ -204,7 +209,9 @@ return [
     'types' => [
         'Role' => 'App\GraphQL\Type\RoleType',
         'Permission' => 'App\GraphQL\Type\PermissionType',
-        'User' => 'App\GraphQL\Type\UserType'
+        'User' => 'App\GraphQL\Type\UserType',
+        'Category' => 'App\GraphQL\Type\Content\CategoryType',
+        'CategoryForSelect' => 'App\GraphQL\Type\Content\CategoryForSelect',
     ],
 
     /*
