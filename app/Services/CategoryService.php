@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CategoryService
 {
-    use AuthorizesRequests, NodeTraverse;
+    use AuthorizesRequests;
 
     public function create($args)
     {
