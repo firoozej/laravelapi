@@ -2,13 +2,14 @@
 
 namespace App\GraphQL\Type\Content;
 
+use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
-class CategoryType extends GraphQLType
+class ItemType extends GraphQLType
 {
     protected $attributes = [
-        'name' => 'Category'
+        'name' => 'Item'
     ];
 
     public function fields()
@@ -20,8 +21,14 @@ class CategoryType extends GraphQLType
             'name' => [
                 'type' => Type::string(),
             ],
-            'parent' => [
+            'description' => [
                 'type' => Type::string(),
+            ],
+            'category' => [
+                'type' => GraphQL::type('Category'),
+            ],
+            'files' => [
+                'type' => Type::listOf(GraphQL::type('ItemFile')),
             ]
         ];
     }

@@ -5,7 +5,7 @@ namespace App\GraphQL\Type\Content;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
-class CategoryForSelect extends GraphQLType
+class CategoryForSelectType extends GraphQLType
 {
     protected $attributes = [
         'name' => 'CategoryForSelect'

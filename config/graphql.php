@@ -124,7 +124,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'refreshToken' => 'App\GraphQL\Query\RefreshTokenQuery',
+                'refreshToken' => 'App\GraphQL\Query\RefreshTokenQuery'
             ],
             'mutation' => [
                 'login' => 'App\GraphQL\Mutation\LoginMutation',
@@ -140,6 +140,9 @@ return [
                 'nav' => 'App\GraphQL\Query\NavQuery',
                 'categories' => 'App\GraphQL\Query\Content\Categories',
                 'categoriesForSelect' => 'App\GraphQL\Query\Content\CategoriesForSelect',
+                'items' => 'App\GraphQL\Query\Content\Items',
+                'files' => 'App\GraphQL\Query\Files',
+
             ],
             'mutation' => [
                 'addRole' => 'App\GraphQL\Mutation\AddRoleMutation',
@@ -154,6 +157,10 @@ return [
                 'addCategory' => 'App\GraphQL\Mutation\Content\Category\Add',
                 'editCategory' => 'App\GraphQL\Mutation\Content\Category\Edit',
                 'deleteCategory' => 'App\GraphQL\Mutation\Content\Category\Delete',
+                'addItem' => 'App\GraphQL\Mutation\Content\Item\Add',
+                'editItem' => 'App\GraphQL\Mutation\Content\Item\Edit',
+                'deleteItem' => 'App\GraphQL\Mutation\Content\Item\Delete',
+                'uploadFile' => 'App\GraphQL\Mutation\UploadFile',
             ]
         ]
     ],
@@ -211,7 +218,10 @@ return [
         'Permission' => 'App\GraphQL\Type\PermissionType',
         'User' => 'App\GraphQL\Type\UserType',
         'Category' => 'App\GraphQL\Type\Content\CategoryType',
-        'CategoryForSelect' => 'App\GraphQL\Type\Content\CategoryForSelect',
+        'CategoryForSelect' => 'App\GraphQL\Type\Content\CategoryForSelectType',
+        'Item' => 'App\GraphQL\Type\Content\ItemType',
+        'File' => 'App\GraphQL\Type\FileType',
+        'ItemFile' => 'App\GraphQL\Type\ItemFileType',
     ],
 
     /*
