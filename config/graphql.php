@@ -142,6 +142,7 @@ return [
                 'categoriesForSelect' => 'App\GraphQL\Query\Content\CategoriesForSelect',
                 'items' => 'App\GraphQL\Query\Content\Items',
                 'files' => 'App\GraphQL\Query\Files',
+                'userNotifications' => 'App\GraphQL\Query\UserNotifications',
 
             ],
             'mutation' => [
@@ -161,6 +162,7 @@ return [
                 'editItem' => 'App\GraphQL\Mutation\Content\Item\Edit',
                 'deleteItem' => 'App\GraphQL\Mutation\Content\Item\Delete',
                 'uploadFile' => 'App\GraphQL\Mutation\UploadFile',
+                'deleteUserNotification' => 'App\GraphQL\Mutation\DeleteUserNotification',
             ]
         ]
     ],
@@ -222,6 +224,7 @@ return [
         'Item' => 'App\GraphQL\Type\Content\ItemType',
         'File' => 'App\GraphQL\Type\FileType',
         'ItemFile' => 'App\GraphQL\Type\ItemFileType',
+        'UserNotification' => 'App\GraphQL\Type\UserNotificationType',
     ],
 
     /*

@@ -31,6 +31,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function notifications()
+    {
+        return $this->hasMany('App\Notification');
+    }
+
     public function superAdmin()
     {
         return $this->hasRole('admin');
