@@ -6,10 +6,10 @@ use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
-class UserNotificationType extends GraphQLType
+class NotificationType extends GraphQLType
 {
     protected $attributes = [
-        'name' => 'UserNotification'
+        'name' => 'Notification'
     ];
 
     public function fields()
@@ -20,7 +20,10 @@ class UserNotificationType extends GraphQLType
             ],
             'text' => [
                 'type' => Type::nonNull(Type::string())
-            ]
+            ],
+            'users' => [
+                'type' =>Type::listOf(GraphQL::type('User'))
+            ],
         ];
     }
 }

@@ -27,6 +27,10 @@ class PermissionsTableSeeder extends Seeder
             [
                 'name' => 'file',
                 'guard_name' => 'api',
+            ],
+            [
+                'name' => 'notification',
+                'guard_name' => 'api',
             ]
         ]);
     }

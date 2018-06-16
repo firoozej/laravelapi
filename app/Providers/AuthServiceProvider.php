@@ -7,6 +7,7 @@ use App\Policies\PermissionServicePolicy;
 use App\Policies\UserServicePolicy;
 use App\Services\RoleService;
 use App\Services\PermissionService;
+use App\Services\UserNotificationService;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
@@ -23,7 +24,9 @@ class AuthServiceProvider extends ServiceProvider
         'App\Model' => 'App\Policies\ModelPolicy',
         RoleService::class => RoleServicePolicy::class,
         PermissionService::class => PermissionServicePolicy::class,
-        UserService::class => UserServicePolicy::class
+        UserService::class => UserServicePolicy::class,
+        UserNotificationService::class => UserNotificationServicePolicy::class,
+        NotificationService::class => NotificationServicePolicy::class,
     ];
 
     /**

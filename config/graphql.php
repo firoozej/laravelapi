@@ -143,6 +143,7 @@ return [
                 'items' => 'App\GraphQL\Query\Content\Items',
                 'files' => 'App\GraphQL\Query\Files',
                 'userNotifications' => 'App\GraphQL\Query\UserNotifications',
+                'notifications' => 'App\GraphQL\Query\Notifications',
 
             ],
             'mutation' => [
@@ -150,8 +151,8 @@ return [
                 'editRole' => 'App\GraphQL\Mutation\EditRoleMutation',
                 'deleteRole' => 'App\GraphQL\Mutation\DeleteRoleMutation',
                 'addPermission' => 'App\GraphQL\Mutation\Permission\Add',
-                'editPermission' => 'App\GraphQL\Mutation\Permission\Edit',
-                'deletePermission' => 'App\GraphQL\Mutation\Permission\Delete',
+                //'editPermission' => 'App\GraphQL\Mutation\Permission\Edit',
+                //'deletePermission' => 'App\GraphQL\Mutation\Permission\Delete',
                 'addUser' => 'App\GraphQL\Mutation\User\Add',
                 'editUser' => 'App\GraphQL\Mutation\User\Edit',
                 'deleteUser' => 'App\GraphQL\Mutation\User\Delete',
@@ -163,6 +164,9 @@ return [
                 'deleteItem' => 'App\GraphQL\Mutation\Content\Item\Delete',
                 'uploadFile' => 'App\GraphQL\Mutation\UploadFile',
                 'deleteUserNotification' => 'App\GraphQL\Mutation\DeleteUserNotification',
+                'addNotification' => 'App\GraphQL\Mutation\Notification\Add',
+                'editNotification' => 'App\GraphQL\Mutation\Notification\Edit',
+                'deleteNotification' => 'App\GraphQL\Mutation\Notification\Delete',
             ]
         ]
     ],
@@ -225,6 +229,7 @@ return [
         'File' => 'App\GraphQL\Type\FileType',
         'ItemFile' => 'App\GraphQL\Type\ItemFileType',
         'UserNotification' => 'App\GraphQL\Type\UserNotificationType',
+        'Notification' => 'App\GraphQL\Type\NotificationType',
     ],
 
     /*

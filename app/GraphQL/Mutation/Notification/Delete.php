@@ -1,14 +1,14 @@
 <?php
-namespace App\GraphQL\Mutation;
+namespace App\GraphQL\Mutation\Notification;
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Mutation;
 
-class DeleteUserNotification extends Mutation
+class Delete extends Mutation
 {
     protected $attributes = [
-        'name' => 'deleteUserNotification'
+        'name' => 'deleteNotification'
     ];
 
     public function type()
@@ -25,7 +25,7 @@ class DeleteUserNotification extends Mutation
 
     public function resolve($root, $args)
     {
-        $roleService = resolve('App\Services\UserNotificationService');
-        return $roleService->delete($args['id']);
+        $serviceProvider = resolve('App\Services\NotificationService');
+        return $serviceProvider->delete($args['id']);
     }
 }

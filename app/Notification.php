@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notification extends Model
 {
-    public function user()
+    protected $guarded = [];
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
+    public function owner()
     {
         return $this->belongsTo('App\User');
     }
