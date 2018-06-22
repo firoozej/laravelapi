@@ -21,10 +21,10 @@ class FileServicePolicy
     public function create($user) {
         return $user->can('file');
     }
-    public function update($user) {
+    public function deleteFile($user) {
         return $user->can('file');
     }
-    public function delete($user) {
+    public function newFolder($user) {
         return $user->can('file');
     }
     public function view($user) {

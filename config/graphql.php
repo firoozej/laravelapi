@@ -151,8 +151,8 @@ return [
                 'editRole' => 'App\GraphQL\Mutation\EditRoleMutation',
                 'deleteRole' => 'App\GraphQL\Mutation\DeleteRoleMutation',
                 'addPermission' => 'App\GraphQL\Mutation\Permission\Add',
-                //'editPermission' => 'App\GraphQL\Mutation\Permission\Edit',
-                //'deletePermission' => 'App\GraphQL\Mutation\Permission\Delete',
+                'editPermission' => 'App\GraphQL\Mutation\Permission\Edit',
+                'deletePermission' => 'App\GraphQL\Mutation\Permission\Delete',
                 'addUser' => 'App\GraphQL\Mutation\User\Add',
                 'editUser' => 'App\GraphQL\Mutation\User\Edit',
                 'deleteUser' => 'App\GraphQL\Mutation\User\Delete',
@@ -167,6 +167,8 @@ return [
                 'addNotification' => 'App\GraphQL\Mutation\Notification\Add',
                 'editNotification' => 'App\GraphQL\Mutation\Notification\Edit',
                 'deleteNotification' => 'App\GraphQL\Mutation\Notification\Delete',
+                'newFolder' => 'App\GraphQL\Mutation\NewFolder',
+                'deleteFile' => 'App\GraphQL\Mutation\DeleteFile',
             ]
         ]
     ],

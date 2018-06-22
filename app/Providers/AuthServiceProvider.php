@@ -27,6 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         UserService::class => UserServicePolicy::class,
         UserNotificationService::class => UserNotificationServicePolicy::class,
         NotificationService::class => NotificationServicePolicy::class,
+        FileService::class => FileServicePolicy::class,
     ];
 
     /**
